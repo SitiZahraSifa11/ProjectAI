@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LapZone - Rekomendasi Laptop Sesuai Kebutuhan Kamu</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Press Start 2P", cursive, sans-serif;
+        background-color: #e0f8d0;
+        color: #306850;
+        line-height: 1.5;
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        image-rendering: pixelated;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        border: 4px solid #306850;
+        background-color: #88c070;
+        box-shadow: 8px 8px 0 #306850;
+        flex-grow: 1;
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 10px 0;
+        border-bottom: 4px solid #306850;
+        margin-bottom: 20px;
+      }
+
+      @media (min-width: 768px) {
+        header {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+
+      h1 {
+        color: #306850;
+        text-shadow: 2px 2px 0 #e0f8d0;
+        font-size: 24px;
+        margin: 0;
+      }
+
+      h2 {
+        color: #306850;
+        text-shadow: 2px 2px 0 #e0f8d0;
+        font-size: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        animation: heartbeat 1.5s infinite;
+      }
+
+      @keyframes heartbeat {
+        0% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(1.1);
+        }
+        50% {
+          transform: scale(1);
+        }
+        75% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      h3 {
+        color: #306850;
+        text-shadow: 2px 2px 0 #e0f8d0;
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+
+      nav {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        color: #306850;
+        text-decoration: none;
+        padding: 5px;
+        border: 2px solid transparent;
+        font-size: 12px;
+      }
+
+      @media (min-width: 768px) {
+        nav a {
+          font-size: 14px;
+        }
+      }
+
+      nav a:hover {
+        border: 2px solid #306850;
+        background-color: #e0f8d0;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .form-field {
+        width: 100%;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 12px;
+      }
+
+      @media (min-width: 768px) {
+        label {
+          font-size: 14px;
+        }
+      }
+
+      select,
+      input {
+        font-family: "Press Start 2P", cursive, sans-serif;
+        background-color: #e0f8d0;
+        border: 3px solid #306850;
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 12px;
+      }
+
+      @media (min-width: 768px) {
+        select,
+        input {
+          font-size: 14px;
+        }
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      button {
+        font-family: "Press Start 2P", cursive, sans-serif;
+        background-color: #306850;
+        color: #e0f8d0;
+        border: none;
+        padding: 12px 20px;
+        cursor: pointer;
+        border: 3px solid #306850;
+        box-shadow: 4px 4px 0 #306850;
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #e0f8d0;
+        color: #306850;
+        transform: translateY(-2px);
+      }
+
+      .result-box {
+        background-color: #e0f8d0;
+        border: 4px solid #306850;
+        padding: 15px;
+        margin-top: 25px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      footer {
+        margin-top: 30px;
+        padding-top: 15px;
+        border-top: 4px solid #306850;
+        font-size: 10px;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        footer {
+          font-size: 12px;
+        }
+      }
+
+      .divider {
+        color: #306850;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 600px) {
+        .container {
+          padding: 15px;
+        }
+
+        h1 {
+          font-size: 20px;
+        }
+
+        h2 {
+          font-size: 18px;
+        }
+
+        select,
+        input,
+        button {
+          padding: 10px 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>LapZone</h1>
+        <nav>
+          <a href="#">Home</a>
+          <span class="divider">|</span>
+          <a href="#">Tentang</a>
+          <span class="divider">|</span>
+          <a href="#">Login</a>
+        </nav>
+      </header>
+
+      <main>
+        <h2>Temukan Laptop Sesuai Kebutuhan Kamu</h2>
+
+        <form method="POST" action="/">
+          <div class="form-field">
+            <label for="kebutuhan">Kebutuhan:</label>
+            <select id="kebutuhan" name="kebutuhan" required>
+              <option value="" disabled selected>Pilih Kebutuhan</option>
+              <option value="gaming">Gaming</option>
+              <option value="kuliah">Kuliah</option>
+              <option value="desain">Desain Grafis</option>
+              <option value="kerja">Kerja Kantoran</option>
+              <option value="editing">Editing Video</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="budget">Budget Maksimal (juta):</label>
+            <input
+              id="budget"
+              name="budget"
+              type="number"
+              min="1"
+              required
+              placeholder="Contoh: 10"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="portabilitas">Portabilitas:</label>
+            <select id="portabilitas" name="portabilitas" required>
+              <option value="" disabled selected>Pilih Portabilitas</option>
+              <option value="ringan">Ringan</option>
+              <option value="standar">Standar</option>
+              <option value="bebas">Tidak Mempermasalahkan Berat</option>
+            </select>
+          </div>
+
+          <div class="button-container">
+            <button type="submit">Cari Rekomendasi Laptop</button>
+          </div>
+        </form>
+
+{% if reply %}
+  <div class="result-box">
+    <h3>Hasil Rekomendasi:</h3>
+    {{ reply|safe }}
+  </div>
+{% endif %}
+
+      </main>
+
+      <footer>
+        <p>© 2025 LapZone — Powered by Our Teammate</p>
+      </footer>
+    </div>
+  </body>
+</html>

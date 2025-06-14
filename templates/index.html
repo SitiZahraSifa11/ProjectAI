@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SiSata - Solusi Wisata Murah Kamu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #d9e1e9, #00f2fe);
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .card {
+      border-radius: 1rem;
+    }
+    .brand-title {
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: #f8f9fa;
+    }
+    .logo-img {
+      max-width: 80px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <div class="text-center text-white mb-4">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo SiSata" class="logo-img" />
+      <div class="brand-title">Laptop Wise</div>
+      <div class="subtitle">Solusi Wisata Murah Kamu</div>
+    </div>
+
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <h5 class="card-title text-center mb-3">Cari Rekomendasi Wisata</h5>
+        <form method="post">
+          <div class="mb-3">
+            <label for="lokasi" class="form-label">Lokasi Tujuan</label>
+            <select class="form-select" id="lokasi" name="lokasi" required>
+              <option value="">Pilih Lokasi</option>
+              <option>Sukabumi</option>
+              <option>Yogyakarta</option>
+              <option>Bali</option>
+              <option>Bandung</option>
+              <option>Lombok</option>
+              <option>Malang</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="jenis" class="form-label">Jenis Wisata</label>
+            <select class="form-select" id="jenis" name="jenis" required>
+              <option value="">Pilih Jenis Wisata</option>
+              <option>Alam</option>
+              <option>Budaya</option>
+              <option>Kuliner</option>
+              <option>Petualangan</option>
+              <option>Relaksasi</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="budget" class="form-label">Budget Kamu</label>
+            <select class="form-select" id="budget" name="budget" required>
+              <option value="">Pilih Budget</option>
+              <option value="50000">&lt; Rp50.000</option>
+              <option value="100000">&lt; Rp100.000</option>
+              <option value="250000">&lt; Rp250.000</option>
+              <option value="500000">Rp250.000 - Rp500.000</option>
+              <option value="1000000">Rp500.000 - Rp1.000.000</option>
+              <option value="2000000">&gt; Rp1.000.000</option>
+            </select>
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg">
+              <i class="bi bi-search"></i> Cari Rekomendasi
+            </button>
+          </div>
+        </form>
+
+        {% if reply %}
+          <div class="mt-4">
+            <h5>Hasil Rekomendasi:</h5>
+            <div class="alert alert-info mt-2">{{ reply|safe }}</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

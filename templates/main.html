@@ -1,0 +1,288 @@
+<!-- templates/main.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LapZone - Rekomendasi Laptop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <style>
+    body {
+    font-family: "Press Start 2P", cursive, sans-serif;
+    background-image: url("/static/Untidled design.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #123456;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-container {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+
+  .container {
+    background-color: rgba(240, 252, 255, 0.9); /* transparan */
+    border: 4px solid #123456;
+    padding: 30px;
+    margin-top: 60px;
+    max-width: 1000px;
+    width: 100%;
+    max-height: 500px;
+    box-shadow: 8px 8px 0 #345;
+  }
+
+  h1 {
+    font-size: 20px;
+    color: #123456;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 12px;
+    color: #345678;
+    text-align: center;
+    animation: heartbeat 1.5s infinite;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  select, input {
+    font-size: 12px;
+    padding: 10px;
+    border: 2px solid #123456;
+    background-color: #e6f7ff;
+  }
+
+  button {
+    background-color: #123456;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #345;
+  }
+
+  button:hover {
+    background-color: #fff;
+    color: #123456;
+    border: 2px solid #123456;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 10px;
+    color: #345678;
+    margin-top: 20px;
+    border-top: 2px solid #ccc;
+    padding-top: 10px;
+  }
+
+  @keyframes heartbeat {
+    0%, 50%, 100% { transform: scale(1); }
+    25%, 75% { transform: scale(1.05); }
+  }
+  </style>
+</head>
+<body>
+  <img src="/static/Untitled design.png" alt="Background" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+" />
+  <!-- <div class="logo-container">
+    <img src="/static/Logo (2).png" alt="Logo LapZone" class="logo" />
+  </div> -->
+
+  <div class="container">
+    <div class="logo-container">
+    <img src="/static/Logo (2).png" alt="Logo LapZone" class="logo" />
+  </div>
+    <h1>LapZone</h1>
+    <h2>Zona Tepat Cari Laptop Keren!</h2>
+
+    <form method="POST" action="/hasil">
+      <label for="kebutuhan">Kebutuhan:</label>
+      <select name="kebutuhan" required>
+        <option value="">-- Pilih --</option>
+        <option value="gaming">Gaming</option>
+        <option value="kuliah">Kuliah</option>
+        <option value="desain">Desain Grafis</option>
+        <option value="kerja">Kerja Kantoran</option>
+        <option value="editing">Editing Video</option>
+      </select>
+
+      <label for="budget">Budget Maksimal (juta):</label>
+      <input type="number" name="budget" placeholder="Contoh: 10" min="1" required>
+
+      <label for="portabilitas">Portabilitas:</label>
+      <select name="portabilitas" required>
+        <option value="">-- Pilih --</option>
+        <option value="ringan">Ringan</option>
+        <option value="standar">Standar</option>
+        <option value="bebas">Tidak mempermasalahkan berat</option>
+      </select>
+
+      <button type="submit">Cari Rekomendasi Laptop</button>
+    </form>
+    <footer>
+    <p>© 2025 LapZone — Powered by Our Teammate</p>
+  </footer>
+  </div>
+
+  <!-- <footer>
+    <p>© 2025 LapZone — Powered by Our Teammate</p>
+  </footer> -->
+</body>
+</html>
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monitoring Suhu ESP32</title>
+  <meta http-equiv="refresh" content="3" /> 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef;
+      color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+    .box {
+      border: 2px solid #4CAF50;
+      padding: 20px;
+      display: inline-block;
+      background-color: #e0ffe0;
+      border-radius: 10px;
+    }
+    h1 {
+      color: #4CAF50;
+    }
+    .status {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Monitoring Suhu Kandang Ayam</h1>
+    <div class="status"><strong>Suhu:</strong> {{ suhu if suhu is not none else "Belum ada data" }} °C</div>
+    <div class="status"><strong>Status Lampu:</strong> {{ status_lampu if status_lampu else "Belum ada data" }}</div>
+  </div>
+</body>
+</html>  -->
+
+<!-- <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monitoring Sensor ESP32</title>
+  <meta http-equiv="refresh" content="3" /> <!-- Refresh tiap 3 detik -->
+  <!-- <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef;
+      text-align: center;
+      padding: 20px;
+    }
+    .box {
+      background-color: #fff;
+      border: 2px solid #4CAF50;
+      border-radius: 10px;
+      display: inline-block;
+      padding: 30px;
+    }
+    h1 {
+      color: #4CAF50;
+    }
+    .status {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Data Sensor dari ESP32</h1>
+    <div class="status"><strong>Suhu:</strong> {{ suhu if suhu is not none else "Belum ada data" }} °C</div>
+    <div class="status"><strong>Status Lampu:</strong> {{ status_lampu if status_lampu else "Belum ada data" }}</div>
+    <div class="status"><strong>Intensitas Cahaya (analog):</strong> {{ cahaya if cahaya is not none else "Belum ada data" }}</div>
+    <div class="status"><strong>Status Gerbang:</strong> {{ gerbang if gerbang else "Belum ada data" }}</div>
+  </div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monitoring Suhu ESP32</title>
+  <meta http-equiv="refresh" content="3" /> 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef;
+      color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+    .box {
+      border: 2px solid #4CAF50;
+      padding: 20px;
+      display: inline-block;
+      background-color: #e0ffe0;
+      border-radius: 10px;
+    }
+    h1 {
+      color: #4CAF50;
+    }
+    .status {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Monitoring Suhu Kandang Ayam</h1>
+    <div class="status"><strong>Suhu:</strong> {{ suhu if suhu is not none else "Belum ada data" }} °C</div>
+    <div class="status"><strong>Status Lampu:</strong> {{ status_lampu if status_lampu is not none else "Belum ada data" }}</div>
+  </div>
+</body>
+</html> -->
+
+
