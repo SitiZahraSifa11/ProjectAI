@@ -42,6 +42,7 @@
 # app.py
 from flask import Flask, request, render_template, redirect, url_for, session
 import google.generativeai as genai
+import os
 
 app = Flask(__name__)
 app.secret_key = "lapzone-secret"  # Session Key
@@ -84,8 +85,11 @@ def tampilkan_hasil():
     reply = session.get("reply", "")
     return render_template("hasil.html", reply=reply)
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Port otomatis dari Railway
+    app.run(host="0.0.0.0", port=port, debug=True)
+
 
 # from flask import Flask, request, render_template, jsonify
 
